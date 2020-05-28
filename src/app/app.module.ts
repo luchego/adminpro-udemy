@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 import { PagesModule } from './pages/pages.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 // import { ServiceModule } from './services/service.module'; // Ya no es necesario despues de la version 6
 
 @NgModule({
@@ -22,6 +23,8 @@ import { FormsModule } from '@angular/forms';
     APP_ROUTES,
     PagesModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
     // ServiceModule
   ],
   providers: [],
