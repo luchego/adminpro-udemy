@@ -1,3 +1,4 @@
+import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginGuardGuard } from './../services/guards/login-guard.guard';
 import { NgModule } from '@angular/core';
@@ -23,6 +24,8 @@ const appRoutes: Routes = [
       { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs'} },
       { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del Tema'} },
       { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario'} },
+      // Mantenimientos
+      { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimientos de usuarios'} },
       { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
     ]
   }
