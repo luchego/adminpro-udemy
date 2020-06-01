@@ -1,3 +1,6 @@
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginGuardGuard } from './../services/guards/login-guard.guard';
@@ -26,6 +29,9 @@ const appRoutes: Routes = [
       { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario'} },
       // Mantenimientos
       { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimientos de usuarios'} },
+      { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Mantenimientos de hospitales'} },
+      { path: 'medicos', component: MedicosComponent, data: { titulo: 'Mantenimientos de medicos'} },
+      { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar médico'} },
       { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
     ]
   }

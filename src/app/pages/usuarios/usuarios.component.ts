@@ -36,7 +36,6 @@ export class UsuariosComponent implements OnInit {
     this.cargando = true;
     this._usuarioService.cargarUsuarios(this.desde)
     .subscribe( (resp: any) => {
-      console.log(resp);
       this.usuarios = resp.usuarios;
       this.totalRegistros = resp.total;
       this.cargando = false;
@@ -44,7 +43,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   cambiarDesde(valor: number) {
-    let desde = this.desde + valor;
+    const desde = this.desde + valor;
 
     if ( desde >= this.totalRegistros) {
       return;
@@ -65,7 +64,6 @@ export class UsuariosComponent implements OnInit {
     this.cargando = true;
     this._usuarioService.buscarUsuario( termino )
     .subscribe( (usuarios: Usuario[]) => {
-      console.log(usuarios);
       this.usuarios = usuarios;
       this.cargando = false;
     });

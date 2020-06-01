@@ -1,0 +1,73 @@
+<div class="row animated fadeIn">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <input #input
+        (keyup)="buscarMedico( input.value )"
+        class="form-control" type="text" placeholder="Buscar médico...">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+
+        <div class="text-right">
+          <button [routerLink]="['/medico','nuevo']"
+             type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Crear médico
+          </button>
+        </div>
+
+        <h3 class="card-title">Médicos registrados ( <small>{{totalRegistros}}</small> )</h3>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Médico</th>
+              <th>Hospital</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let medico of medicos">
+              <td scope="row" class="w70">
+                <img
+                [src]="medico.img | imagen:'medico'" alt="" class="img-50 pointer">
+              </td>
+              <td>
+                {{medico.nombre}}
+              </td>
+              <td>
+                {{ medico.hospital.nombre }}
+              </td>
+              <td>
+                <button [routerLink]="['/medico',medico._id]"
+                type="button" class="btn btn-primary">
+                  <i class="fa fa-edit" aria-hidden="true"></i>
+                </button>
+                <button
+                 (click)="borrarMedico(medico)"
+                 type="button" class="btn btn-danger " style="margin-left: 10px;">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button
+        (click)="cambiarDesde(-5)"
+        type="button" class="btn btn-secondary">Anteriores</button>
+        <button
+        (click)="cambiarDesde(5)"
+        type="button" class="btn btn-secondary" style="margin-left: 10px;">Siguientes</button>
+      </div>
+    </div>
+  </div>
+</div>
