@@ -1,3 +1,4 @@
+import { ModalUploadComponent } from './../components/modal-upload/modal-upload.component';
 import { PipesModule } from './../pipes/pipes.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -15,7 +16,8 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
     NopagefoundComponent,
     HeaderComponent,
     SidebarComponent,
-    BreadscrumbsComponent
+    BreadscrumbsComponent,
+    ModalUploadComponent
   ],
   imports:[
     CommonModule,
@@ -26,7 +28,8 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
     NopagefoundComponent,
     HeaderComponent,
     SidebarComponent,
-    BreadscrumbsComponent
+    BreadscrumbsComponent,
+    ModalUploadComponent
   ]
 })
 export class SharedModule { }

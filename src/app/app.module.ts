@@ -1,3 +1,5 @@
+import { SharedModule } from './shared/shared.module';
+import { PagesComponent } from './pages/pages.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,15 +18,16 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTES,
-    PagesModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
     // ServiceModule
   ],
   providers: [],
